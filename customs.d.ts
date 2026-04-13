@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import { DefaultSession } from "next-auth";
 import "next-auth";
 import "next-auth/jwt";
@@ -20,14 +19,3 @@ declare module "next-auth/jwt" {
     fdlst_private_userId?: string;
   }
 }
-
-declare global {
-  var mongooseCache:
-    | {
-        conn: typeof mongoose | null;
-        promise: Promise<typeof mongoose> | null;
-      }
-    | undefined;
-}
-
-export {};
